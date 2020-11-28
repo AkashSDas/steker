@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:steker/services/services.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +50,7 @@ class LoginScreen extends StatelessWidget {
                 'Continue as Guest',
                 style: Theme.of(context).textTheme.headline6,
               ),
-              onPressed: () {},
+              onPressed: () => _auth.anonLogin(),
             ),
           ],
         ),
