@@ -66,9 +66,9 @@ final darkThemeData = ThemeData(
     ),
     headline6: TextStyle(
       fontSize: 16,
-      color: gray5,
+      color: gray0,
       fontFamily: fontBody,
-      fontWeight: FontWeight.w800,
+      fontWeight: FontWeight.w400,
     ),
     bodyText1: TextStyle(
       fontSize: 28,
@@ -137,7 +137,7 @@ final lightThemeData = ThemeData(
     ),
     bodyText2: TextStyle(
       fontSize: 24,
-      color: gray4,
+      color: gray0,
       fontFamily: fontBody,
       fontWeight: FontWeight.w400,
     ),
