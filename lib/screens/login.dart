@@ -50,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 'Continue as Guest',
                 style: Theme.of(context).textTheme.headline6,
               ),
-              onPressed: () => _auth.anonLogin(),
+              onPressed: _auth.anonLogin,
             ),
           ],
         ),
