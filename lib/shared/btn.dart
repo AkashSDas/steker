@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 import '../constant.dart';
 import '../theme.dart';
@@ -13,13 +13,13 @@ class ToggleThemeBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     String currentMode = themeChanger.getThemeMode();
     Icon themeIcon = Icon(
-      FontAwesomeIcons.sun,
+      FontAwesome5.sun,
       size: space * 3,
     );
 
     if (currentMode == 'dark') {
       themeIcon = Icon(
-        FontAwesomeIcons.moon,
+        FontAwesome5.moon,
         size: space * 3,
       );
     }

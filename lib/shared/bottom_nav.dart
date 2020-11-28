@@ -1,6 +1,6 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 import '../constant.dart' as Constant;
 
@@ -42,7 +42,7 @@ class AppBottomNav extends StatelessWidget {
         BottomNavyBarItem(
           activeColor: Constant.blue,
           inactiveColor: Constant.pink,
-          icon: Icon(FontAwesomeIcons.userAlt),
+          icon: Icon(FontAwesome5.user_circle),
           title: Text(
             'profile',
             style: Theme.of(context).textTheme.bodyText2,
