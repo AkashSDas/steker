@@ -16,7 +16,16 @@ class AuthService {
   Stream<User> get user => _auth.authStateChanges();
 
   Future<User> anonLogin() async {
-    UserCredential credential = await _auth.signInAnonymously();
-    print(credential);
+    try {
+      UserCredential credential = await _auth.signInAnonymously();
+      return credential.user;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  // Sign out
+  Future<void> signOut() {
+    return _auth.signOut();
   }
 }
