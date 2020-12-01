@@ -13,9 +13,14 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     super.initState();
-    if (_auth.getUser != null) {
-      Navigator.pushReplacementNamed(context, '/home');
-    }
+    Future.delayed(
+      Duration.zero,
+      () {
+        if (_auth.getUser != null) {
+          Navigator.pushReplacementNamed(context, '/home');
+        }
+      },
+    );
   }
 
   @override
