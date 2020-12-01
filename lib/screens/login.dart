@@ -11,6 +11,14 @@ class _LoginScreenState extends State<LoginScreen> {
   AuthService _auth = AuthService();
 
   @override
+  void initState() {
+    super.initState();
+    if (_auth.getUser != null) {
+      Navigator.pushReplacementNamed(context, '/home');
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(),
