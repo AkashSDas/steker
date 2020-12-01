@@ -1,17 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:steker/shared/shared.dart';
 
 class HomeScreen extends StatelessWidget {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('home'),
+      // appBar: AppBar(
+      //   title: Text('home'),
+      // ),
+      key: _scaffoldKey,
+      drawer: Drawer(
+        child: ListView(),
       ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        child: Center(
-          child: Text('home'),
+      body: SafeArea(
+        child: Container(
+          child: Column(
+            children: [
+              CustomAppBar(
+                title: 'home',
+                currentPath: '/home',
+                scaffoldKey: _scaffoldKey,
+              )
+            ],
+          ),
         ),
       ),
     );
