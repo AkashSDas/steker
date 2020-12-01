@@ -13,6 +13,13 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     super.initState();
+
+    /// Delaying the check and thus the navigation to '/home
+    /// and thus the built of the app to avoid the
+    /// “!_debugLocked': is not true.” => error
+    /// One drawback of this solution is that for few milliseconds
+    /// the login screen is displayed even though the user is logged
+    /// in
     Future.delayed(
       Duration.zero,
       () {
