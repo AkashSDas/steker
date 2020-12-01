@@ -38,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
             LoginBtn(
               icon: FontAwesome.google,
               text: 'LOGIN WITH GOOGLE',
-              loginMethod: () {},
+              loginMethod: _auth.googleSignIn,
               color: Theme.of(context).accentColor,
             ),
             // LoginBtn(
