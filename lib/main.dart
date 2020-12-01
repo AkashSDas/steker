@@ -79,11 +79,11 @@ class MaterialAppWithTheme extends StatelessWidget {
               // Named Routes
               routes: {
                 '/': (context) => LoginScreen(),
-                // '/home': (context) => HomeScreen(),
-                // '/about': (context) => AboutScreen(),
-                // '/sticker-details': (context) => StickerDetailsScreen(),
+                '/home': (context) => HomeScreen(),
+                '/about': (context) => AboutScreen(),
+                '/sticker-details': (context) => StickerDetailsScreen(),
                 // '/upload-image': (context) => UploadImageScreen(),
-                // '/profile': (context) => ProfileScreen(),
+                '/profile': (context) => ProfileScreen(),
               },
 
               // Theme
