@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+import 'package:provider/provider.dart';
+import 'package:steker/shared/btn.dart';
 
 import '../constant.dart';
+import '../theme.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String currentPath;
@@ -18,6 +20,8 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeChanger _themeChanger = Provider.of<ThemeChanger>(context);
+
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(vertical: space, horizontal: space),
@@ -35,15 +39,16 @@ class CustomAppBar extends StatelessWidget {
                   onPressed: () => Navigator.pop(context),
                 ),
           Text(title, style: Theme.of(context).textTheme.headline2),
-          IconButton(
-            icon: Icon(FontAwesome5.user),
-            onPressed: () {
-              Future.delayed(
-                Duration.zero,
-                () => Navigator.pushNamed(context, '/profile'),
-              );
-            },
-          ),
+          // IconButton(
+          //   icon: Icon(FontAwesome5.user),
+          //   onPressed: () {
+          //     Future.delayed(
+          //       Duration.zero,
+          //       () => Navigator.pushNamed(context, '/profile'),
+          //     );
+          //   },
+          // ),
+          ToggleThemeBtn(themeChanger: _themeChanger),
         ],
       ),
     );
