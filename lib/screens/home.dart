@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
       drawer: Drawer(
         child: ListView(),
       ),
+      backgroundColor: Theme.of(context).primaryColor,
       body: SafeArea(
         child: Container(
           child: Column(
