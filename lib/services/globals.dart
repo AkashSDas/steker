@@ -14,4 +14,9 @@ class Global {
   static final Map models = {
     Sticker: (data) => Sticker.fromJson(data),
   };
+
+  // Firestore References
+  static final Collection<Sticker> stickerRef = Collection<Sticker>(
+    path: 'stickers',
+  );
 }
