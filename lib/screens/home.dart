@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:steker/shared/drawer.dart';
 import 'package:steker/shared/shared.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,8 +12,11 @@ class HomeScreen extends StatelessWidget {
       //   title: Text('home'),
       // ),
       key: _scaffoldKey,
-      drawer: Drawer(
-        child: ListView(),
+      drawer: Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: Theme.of(context).primaryColor,
+        ),
+        child: AppDrawer(),
       ),
       backgroundColor: Theme.of(context).primaryColor,
       body: SafeArea(
