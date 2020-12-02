@@ -1,55 +1,41 @@
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-
-import '../constant.dart' as Constant;
 
 class AppBottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BottomNavyBar(
-      backgroundColor: Theme.of(context).primaryColor,
-      animationDuration: Duration(milliseconds: 500),
-      curve: Curves.bounceInOut,
+    return BottomNavigationBar(
+      unselectedIconTheme: IconThemeData(
+        color: Theme.of(context).textTheme.bodyText1.color,
+        size: 20,
+      ),
+      selectedIconTheme: IconThemeData(
+        color: Theme.of(context).textTheme.headline2.color,
+        size: 24,
+      ),
+      showUnselectedLabels: true,
+      selectedItemColor: Theme.of(context).textTheme.headline2.color,
+      unselectedItemColor: Theme.of(context).textTheme.bodyText1.color,
       items: [
-        BottomNavyBarItem(
-          activeColor: Constant.blue,
-          inactiveColor: Constant.purple,
-          icon: Icon(Icons.home),
-          title: Text(
-            'home',
-            style: Theme.of(context).textTheme.bodyText2,
-          ),
+        BottomNavigationBarItem(
+          icon: Icon(FontAwesome.home),
+          label: 'Home',
+          backgroundColor: Theme.of(context).primaryColor,
         ),
-        BottomNavyBarItem(
-          activeColor: Constant.blue,
-          inactiveColor: Constant.purple,
-          icon: Icon(Icons.image_search),
-          title: Text(
-            'gallery',
-            style: Theme.of(context).textTheme.bodyText2,
-          ),
+        BottomNavigationBarItem(
+          icon: Icon(FontAwesome5.images),
+          label: 'Gallery',
         ),
-        BottomNavyBarItem(
-          activeColor: Constant.blue,
-          inactiveColor: Constant.orange,
-          icon: Icon(Icons.camera_alt_outlined),
-          title: Text(
-            'camera',
-            style: Theme.of(context).textTheme.bodyText2,
-          ),
+        BottomNavigationBarItem(
+          icon: Icon(FontAwesome.camera_retro),
+          label: 'Camera',
         ),
-        BottomNavyBarItem(
-          activeColor: Constant.blue,
-          inactiveColor: Constant.pink,
-          icon: Icon(FontAwesome5.user_circle),
-          title: Text(
-            'profile',
-            style: Theme.of(context).textTheme.bodyText2,
-          ),
-        ),
+        BottomNavigationBarItem(
+          icon: Icon(FontAwesome5.user),
+          label: 'Profile',
+        )
       ].toList(),
-      onItemSelected: (int idx) {
+      onTap: (int idx) {
         switch (idx) {
           case 0:
             // do nothing
@@ -65,7 +51,6 @@ class AppBottomNav extends StatelessWidget {
             break;
         }
       },
-      // fixedColor: Constant.blue,
     );
   }
 }
