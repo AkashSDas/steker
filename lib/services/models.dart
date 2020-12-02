@@ -3,7 +3,7 @@
 class Sticker {
   String id;
   String tag;
-  List<String> stickerImgUrls;
+  List<dynamic> stickerImgUrls;
 
   Sticker({this.id, this.stickerImgUrls, this.tag});
 
