@@ -19,7 +19,7 @@ class ToggleThemeBtn extends StatelessWidget {
 
     if (currentMode == 'dark') {
       themeIcon = Icon(
-        WeatherIcons.wi_day_sunny,
+        FontAwesome5.sun,
         size: space * 3,
       );
     }
