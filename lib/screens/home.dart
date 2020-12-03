@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:steker/screens/sticker_details.dart';
 import 'package:steker/services/globals.dart';
 import 'package:steker/services/models.dart';
 import 'package:steker/shared/drawer.dart';
@@ -115,7 +116,7 @@ class StickerCollectionListView extends StatelessWidget {
                 getCollectionTitle(sticker.tag),
                 style: Theme.of(context).textTheme.bodyText1,
               ),
-              _Btns(),
+              _Btns(sticker: sticker),
             ],
           ),
           SizedBox(height: Constant.space * 4),
@@ -147,6 +148,10 @@ class StickerCollectionListView extends StatelessWidget {
 }
 
 class _Btns extends StatelessWidget {
+  final Sticker sticker;
+
+  _Btns({this.sticker});
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -177,7 +182,15 @@ class _Btns extends StatelessWidget {
         ),
         SizedBox(width: Constant.space),
         InkWell(
-          onTap: () => print('go to detials screen'),
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => StickerDetailsScreen(
+                  sticker: sticker,
+                ),
+              ),
+            );
+          },
           child: Container(
             padding: EdgeInsets.symmetric(
               vertical: Constant.space * 0.2,
