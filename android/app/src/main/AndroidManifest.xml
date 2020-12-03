@@ -43,5 +43,8 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+        <!-- For flutter_whatsapp_stickers package -->
+        <meta-data android:name="NonAssetContentProvider" android:value="true" />
     </application>
 </manifest>

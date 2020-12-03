@@ -54,6 +54,11 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    // For flutter_whatsapp_stickers package
+    aaptOptions {
+        noCompress "webp"
+    }
 }
 
 flutter {
