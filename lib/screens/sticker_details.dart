@@ -1,7 +1,13 @@
+import 'dart:io';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:steker/services/services.dart';
 import 'package:steker/shared/app_bar.dart';
+import 'package:whatsapp_stickers/exceptions.dart';
+import 'package:whatsapp_stickers/whatsapp_stickers.dart';
 
 import '../constant.dart' as Constant;
 
@@ -55,7 +61,10 @@ class StickerDetailsScreen extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: FlatButton(
                   padding: EdgeInsets.all(Constant.space),
-                  onPressed: () => print('add to whatsapp pressed'),
+                  onPressed: () => installFromRemote(
+                    sticker.stickerImgUrls,
+                    sticker.tag,
+                  ),
                   color: Constant.green,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(Constant.space),
@@ -96,5 +105,53 @@ class StickerDetailsScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+Future installFromRemote(List<dynamic> stickers, String stickerTag) async {
+  var applicationDocumentsDirectory = await getApplicationDocumentsDirectory();
+  var stickersDirectory =
+      Directory('${applicationDocumentsDirectory.path}/stickers');
+  await stickersDirectory.create(recursive: true);
+
+  final dio = Dio();
+  final downloads = <Future>[];
+
+  stickers.asMap().forEach((index, stickerUrl) {
+    downloads.add(
+      dio.download(
+        '$stickerUrl',
+        '${stickersDirectory.path}/$stickerTag-${index + 1}.webp',
+      ),
+    );
+  });
+
+  await Future.wait(downloads);
+
+  var stickerPack = WhatsappStickers(
+    identifier: '$stickerTag',
+    name: '$stickerTag stickers',
+    publisher: 'AkashSDas',
+    trayImageFileName: WhatsappStickerImage.fromFile(
+      '${stickersDirectory.path}/$stickerTag-0.webp',
+    ),
+    publisherWebsite: '',
+    privacyPolicyWebsite: '',
+    licenseAgreementWebsite: '',
+  );
+
+  stickers.asMap().forEach((index, stickerUrl) {
+    stickerPack.addSticker(
+      WhatsappStickerImage.fromFile(
+        '${stickersDirectory.path}/$stickerTag-${index + 1}.webp',
+      ),
+      ['', ''],
+    );
+  });
+
+  try {
+    await stickerPack.sendToWhatsApp();
+  } on WhatsappStickersException catch (e) {
+    print(e.cause);
   }
 }
