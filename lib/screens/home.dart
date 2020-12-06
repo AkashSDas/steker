@@ -40,9 +40,6 @@ class HomeScreen extends StatelessWidget {
                 builder: (context, AsyncSnapshot snap) {
                   if (snap.hasData) {
                     List<Sticker> stickers = snap.data;
-                    stickers.add(stickers[0]);
-                    stickers.add(stickers[0]);
-                    stickers.add(stickers[0]);
                     return Expanded(
                       child: ListView.builder(
                         itemCount: stickers.length,
