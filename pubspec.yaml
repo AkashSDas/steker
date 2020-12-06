@@ -11,16 +11,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  bottom_navy_bar: ^5.6.0
   cloud_firestore: ^0.14.3+1
+  dio: ^3.0.10
   firebase_analytics: ^6.2.0
   firebase_auth: ^0.18.3+1
   firebase_core: ^0.5.2+1
   firebase_storage: ^5.1.0
   flutter_icons: ^1.1.0
-  flutter_whatsapp_stickers: ^1.0.0+4
   google_sign_in: ^4.5.6
+  path_provider: ^1.6.24
   provider: ^4.3.2+2
+  whatsapp_stickers: ^0.0.4
 
 dev_dependencies:
   flutter_test:
@@ -28,9 +29,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/tray_img.png
   # fonts:
   #   - family: Schyler
   #     fonts:
