@@ -29,6 +29,11 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 android {
     compileSdkVersion 29
 
+    // For whatsapp_stickers package
+    aaptOptions {
+        noCompress "webp"
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -53,11 +58,6 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
         }
-    }
-
-    // For flutter_whatsapp_stickers package
-    aaptOptions {
-        noCompress "webp"
     }
 }
 
