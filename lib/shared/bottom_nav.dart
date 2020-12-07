@@ -18,7 +18,7 @@ class AppBottomNav extends StatelessWidget {
       unselectedItemColor: Theme.of(context).textTheme.bodyText1.color,
       items: [
         BottomNavigationBarItem(
-          icon: Icon(FontAwesome.home),
+          icon: Icon(AntDesign.home),
           label: 'Home',
           backgroundColor: Theme.of(context).primaryColor,
         ),
@@ -27,11 +27,11 @@ class AppBottomNav extends StatelessWidget {
           label: 'Gallery',
         ),
         BottomNavigationBarItem(
-          icon: Icon(FontAwesome.camera_retro),
+          icon: Icon(FontAwesome.video_camera),
           label: 'Camera',
         ),
         BottomNavigationBarItem(
-          icon: Icon(FontAwesome5.user),
+          icon: Icon(FontAwesome.user_o),
           label: 'Profile',
         )
       ].toList(),
