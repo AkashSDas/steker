@@ -16,19 +16,11 @@ class AppBottomNav extends StatelessWidget {
       showUnselectedLabels: true,
       selectedItemColor: Theme.of(context).textTheme.headline2.color,
       unselectedItemColor: Theme.of(context).textTheme.bodyText1.color,
+      backgroundColor: Theme.of(context).primaryColor,
       items: [
         BottomNavigationBarItem(
           icon: Icon(AntDesign.home),
           label: 'Home',
-          backgroundColor: Theme.of(context).primaryColor,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(FontAwesome5.images),
-          label: 'Gallery',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(FontAwesome.video_camera),
-          label: 'Camera',
         ),
         BottomNavigationBarItem(
           icon: Icon(FontAwesome.user_o),
@@ -41,12 +33,6 @@ class AppBottomNav extends StatelessWidget {
             // do nothing
             break;
           case 1:
-            // TODO: go to gallery
-            break;
-          case 2:
-            // TODO: open camera
-            break;
-          case 3:
             Navigator.pushNamed(context, '/profile');
             break;
         }
