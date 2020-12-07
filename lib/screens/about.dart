@@ -1,17 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:steker/shared/app_bar.dart';
+
+import '../constant.dart' as Constant;
 
 class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('about'),
-      ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        child: Center(
-          child: Text('about'),
+      backgroundColor: Theme.of(context).primaryColor,
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            CustomAppBar(title: 'about'),
+            SizedBox(height: Constant.space * 4),
+            Text('steker', style: Theme.of(context).textTheme.headline1),
+            SizedBox(height: Constant.space * 4),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: Constant.space * 2),
+              child: RichText(
+                text: TextSpan(
+                  style: Theme.of(context).textTheme.bodyText1,
+                  children: [
+                    TextSpan(
+                      text: 'steker ',
+                      style: Theme.of(context).textTheme.headline2,
+                    ),
+                    TextSpan(text: 'is a all in one sticker app for your fun'),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

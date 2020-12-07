@@ -35,14 +35,17 @@ class AppDrawer extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline4,
                   ),
                 ),
-                ListTile(
-                  leading: Icon(
-                    FontAwesome.exclamation_circle,
-                    color: Theme.of(context).textTheme.bodyText1.color,
-                  ),
-                  title: Text(
-                    'About',
-                    style: Theme.of(context).textTheme.headline4,
+                InkWell(
+                  onTap: () => Navigator.pushNamed(context, '/about'),
+                  child: ListTile(
+                    leading: Icon(
+                      FontAwesome.exclamation_circle,
+                      color: Theme.of(context).textTheme.bodyText1.color,
+                    ),
+                    title: Text(
+                      'About',
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
                   ),
                 ),
                 ListTile(
