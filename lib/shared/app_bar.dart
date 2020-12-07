@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 import 'package:steker/shared/btn.dart';
 
@@ -31,7 +32,7 @@ class CustomAppBar extends StatelessWidget {
         children: [
           currentPath == '/home'
               ? IconButton(
-                  icon: Icon(Icons.menu),
+                  icon: Icon(FontAwesome.bars),
                   onPressed: () => scaffoldKey.currentState.openDrawer(),
                 )
               : IconButton(

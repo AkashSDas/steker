@@ -13,13 +13,13 @@ class ToggleThemeBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     String currentMode = themeChanger.getThemeMode();
     Icon themeIcon = Icon(
-      FontAwesome.moon_o,
+      FontAwesome5Solid.moon,
       size: space * 3,
     );
 
     if (currentMode == 'dark') {
       themeIcon = Icon(
-        FontAwesome5.sun,
+        FontAwesome5Solid.sun,
         size: space * 3,
       );
     }
