@@ -3,6 +3,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:steker/screens/sticker_details.dart';
 import 'package:steker/services/globals.dart';
 import 'package:steker/services/models.dart';
+import 'package:steker/services/whatsapp.dart';
 import 'package:steker/shared/drawer.dart';
 import 'package:steker/shared/loader.dart';
 import 'package:steker/shared/shared.dart';
@@ -155,7 +156,10 @@ class _Btns extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         InkWell(
-          onTap: () => print('add btn pressed'),
+          onTap: () => installFromRemote(
+            sticker.stickerImgUrls,
+            sticker.tag,
+          ),
           child: Container(
             padding: EdgeInsets.symmetric(
               vertical: Constant.space * 0.2,
