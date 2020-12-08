@@ -69,7 +69,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 'Continue as Guest',
                 style: Theme.of(context).textTheme.headline6,
               ),
-              onPressed: _auth.anonLogin,
+              onPressed: () async {
+                var user = await _auth.anonLogin();
+                if (user != null) {
+                  Navigator.pushReplacementNamed(context, '/home');
+                }
+              },
             ),
           ],
         ),
