@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:steker/shared/app_bar.dart';
 
 import '../constant.dart' as Constant;
+import '../shared/app_bar.dart';
 
 class AboutScreen extends StatelessWidget {
   @override
