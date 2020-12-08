@@ -44,7 +44,7 @@ Future installFromRemote(List<dynamic> stickers, String stickerTag) async {
     name: '$stickerTag stickers',
     publisher: 'AkashSDas',
     trayImageFileName: WhatsappStickerImage.fromAsset(
-      'assets/tray_img1.png',
+      'assets/tray_img.png',
     ),
     publisherWebsite: '',
     privacyPolicyWebsite: '',

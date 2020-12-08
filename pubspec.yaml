@@ -31,7 +31,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/tray_img.png
-    - assets/tray_img1.png
   # fonts:
   #   - family: Schyler
   #     fonts:
