@@ -6,8 +6,6 @@ const blue = Color(0xFF5291EE);
 const lightBlue = Color(0xFFEFFBFF);
 const green = Color(0xFF13B755);
 const purple = Color(0xFF8F53F1);
-const yellow = Color(0xFFFAFF00);
-const pink = Color(0xFFFF3F8F);
 const orange = Color(0xFFFD7C1F);
 
 const gray0 = Color(0xFFFDFCFC);
@@ -29,7 +27,7 @@ const boxShadow = BoxShadow(
 final darkThemeData = ThemeData(
   iconTheme: IconThemeData(color: gray1),
   primaryColor: gray5,
-  accentColor: gray4,
+  accentColor: gray3,
   bottomAppBarTheme: BottomAppBarTheme(
     color: gray3,
   ),
@@ -88,7 +86,7 @@ final darkThemeData = ThemeData(
 final lightThemeData = ThemeData(
   iconTheme: IconThemeData(color: gray5),
   primaryColor: gray0,
-  accentColor: gray0,
+  accentColor: lightBlue,
   bottomAppBarTheme: BottomAppBarTheme(
     color: lightBlue,
   ),
