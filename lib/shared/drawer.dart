@@ -39,23 +39,13 @@ class AppDrawer extends StatelessWidget {
                   onTap: () => Navigator.pushNamed(context, '/about'),
                   child: ListTile(
                     leading: Icon(
-                      FontAwesome.exclamation_circle,
+                      AntDesign.exclamationcircleo,
                       color: Theme.of(context).textTheme.bodyText1.color,
                     ),
                     title: Text(
                       'About',
                       style: Theme.of(context).textTheme.headline4,
                     ),
-                  ),
-                ),
-                ListTile(
-                  leading: Icon(
-                    FontAwesome.code,
-                    color: Theme.of(context).textTheme.bodyText1.color,
-                  ),
-                  title: Text(
-                    'Code',
-                    style: Theme.of(context).textTheme.headline4,
                   ),
                 ),
               ],
