@@ -40,15 +40,6 @@ class CustomAppBar extends StatelessWidget {
                   onPressed: () => Navigator.pop(context),
                 ),
           Text(title, style: Theme.of(context).textTheme.headline2),
-          // IconButton(
-          //   icon: Icon(FontAwesome5.user),
-          //   onPressed: () {
-          //     Future.delayed(
-          //       Duration.zero,
-          //       () => Navigator.pushNamed(context, '/profile'),
-          //     );
-          //   },
-          // ),
           ToggleThemeBtn(themeChanger: _themeChanger),
         ],
       ),
