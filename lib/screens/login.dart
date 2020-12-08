@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:steker/services/services.dart';
+
+import '../constant.dart' as Constant;
+import '../services/services.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -20,14 +22,11 @@ class _LoginScreenState extends State<LoginScreen> {
     /// One drawback of this solution is that for few milliseconds
     /// the login screen is displayed even though the user is logged
     /// in
-    Future.delayed(
-      Duration.zero,
-      () {
-        if (_auth.getUser != null) {
-          Navigator.pushReplacementNamed(context, '/home');
-        }
-      },
-    );
+    Future.delayed(Duration.zero, () {
+      if (_auth.getUser != null) {
+        Navigator.pushReplacementNamed(context, '/home');
+      }
+    });
   }
 
   @override
@@ -36,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
       // appBar: AppBar(),
       backgroundColor: Theme.of(context).primaryColor,
       body: Container(
-        padding: EdgeInsets.all(30),
+        padding: EdgeInsets.all(Constant.space * 3),
         width: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -96,9 +95,9 @@ class LoginBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 10),
+      margin: EdgeInsets.only(bottom: Constant.space * 0.2),
       child: FlatButton.icon(
-        padding: EdgeInsets.all(30),
+        padding: EdgeInsets.all(Constant.space * 3),
         icon: Icon(icon, color: Theme.of(context).textTheme.bodyText1.color),
         color: color,
         onPressed: () async {
