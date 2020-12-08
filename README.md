@@ -1,16 +1,23 @@
 # steker
 
-A new Flutter project.
+Using Flutter and Firebase to make cross-platform mobile app used to add sticker collections to your WhatsApp
 
-## Getting Started
+## Setting up the Firestore and Storage in Firebase
 
-This project is a starting point for a Flutter application.
+![](docs/firebase/firebase1.png)
+![](docs/firebase/firebase2.png)
+![](docs/firebase/firebase3.png)
+![](docs/firebase/firebase4.png)
 
-A few resources to get you started if this is your first Flutter project:
+## Output
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![](docs/output/output1.jpeg)
+![](docs/output/output2.jpeg)
+![](docs/output/output3.jpeg)
+![](docs/output/output4.jpeg)
+![](docs/output/output5.jpeg)
+![](docs/output/output6.jpeg)
+![](docs/output/output7.jpeg)
+![](docs/output/output8.jpeg)
+![](docs/output/output9.jpeg)
+![](docs/output/output10.jpeg)
