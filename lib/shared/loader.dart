@@ -6,7 +6,9 @@ class Loader extends StatelessWidget {
     return Container(
       height: 250,
       width: 250,
-      child: CircularProgressIndicator(),
+      child: CircularProgressIndicator(
+        backgroundColor: Theme.of(context).textTheme.headline1.color,
+      ),
     );
   }
 }
