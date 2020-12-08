@@ -5,6 +5,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:whatsapp_stickers/exceptions.dart';
 import 'package:whatsapp_stickers/whatsapp_stickers.dart';
 
+/// This used to download stickers from Firestore and stickers to WhatsApp
 Future installFromRemote(List<dynamic> stickers, String stickerTag) async {
   var applicationDocumentsDirectory = await getApplicationDocumentsDirectory();
   var stickersDirectory = Directory(
