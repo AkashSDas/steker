@@ -15,9 +15,6 @@ import 'constant.dart' as Constant;
 
 void main() => runApp(MyApp());
 
-// FirebaseApp steker = Firebase.app('Steker');
-// FirebaseAuth auth = FirebaseAuth.instanceFor(app: steker);
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -82,7 +79,6 @@ class MaterialAppWithTheme extends StatelessWidget {
                 '/home': (context) => HomeScreen(),
                 '/about': (context) => AboutScreen(),
                 '/sticker-details': (context) => StickerDetailsScreen(),
-                // '/upload-image': (context) => UploadImageScreen(),
                 '/profile': (context) => ProfileScreen(),
               },
 
