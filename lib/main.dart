@@ -5,12 +5,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:steker/services/services.dart';
-import 'package:steker/shared/error.dart';
-import 'package:steker/shared/loader.dart';
-import 'package:steker/theme.dart';
 
 import './screens/screens.dart';
+import './services/services.dart';
+import './shared/shared.dart';
+import './theme.dart';
 import 'constant.dart' as Constant;
 
 void main() => runApp(MyApp());
